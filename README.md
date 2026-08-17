@@ -41,6 +41,10 @@ JSON result on stdout:
 { "ok": true, "format": "docx", "input": "...", "output": "...", "warnings": [] }
 ```
 
+## Chinese PDF optimization
+
+Real-document battle tested. Chinese PDFs often use CID-embedded fonts whose incomplete mapping tables make extractors emit compatibility ideographs (`⼯` instead of `工`) or replacement characters (`�`). This tool applies Unicode NFKC normalization plus a targeted replacement-char rescue inside the PDF engine, so extracted text comes out clean and searchable — a gap in upstream tools like markitdown.
+
 ## Safety
 
 - Rejects path traversal (`..` escaping the given root / hidden zip entries)
