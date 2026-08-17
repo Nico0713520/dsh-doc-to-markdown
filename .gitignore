@@ -1,0 +1,3 @@
+node_modules/
+tests/fixtures/*.md
+tests/fixtures/bad.txt

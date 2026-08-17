@@ -1,0 +1,18 @@
+{
+  "name": "dsh-doc-to-markdown",
+  "version": "0.1.0",
+  "description": "Convert PDF/DOCX documents to Markdown. Windows-first, Chinese-doc friendly. dsh / Claude Code / OpenClaw compatible SKILL.md skill package.",
+  "type": "commonjs",
+  "bin": {
+    "doc2md": "scripts/convert.cjs"
+  },
+  "scripts": {
+    "test": "node tests/run-tests.cjs"
+  },
+  "dependencies": {
+    "mammoth": "^1.8.0",
+    "turndown": "^7.2.0"
+  },
+  "keywords": ["dsh-plugin", "skill", "markdown", "pdf", "docx", "converter"],
+  "license": "MIT"
+}
