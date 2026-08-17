@@ -27,6 +27,8 @@ doc.close()
 if total > 0 and text_pages == 0:
     print(json.dumps({"ok": False, "scanned": True}, ensure_ascii=False)); sys.exit(0)
 md = pymupdf4llm.to_markdown(src)
+import unicodedata
+md = unicodedata.normalize('NFKC', md).replace('\ufffd', '"')
 with open(dst, 'w', encoding='utf-8') as f:
     f.write(md)
 print(json.dumps({"ok": True, "pages": total, "text_pages": text_pages}, ensure_ascii=False))
